@@ -26,7 +26,7 @@ INSERT into highschooler (id, name, grade) VALUES (2000, 'jane', 9);
 
 
 ##A8
-delete from highschooler where id = (select id from highschooler where id not in ((select id1 from friend) union (select distinct id2 from friend)));
+delete from highschooler where id != all(select id1 from likes);
 
 
 ##A9
